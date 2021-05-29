@@ -1,16 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import {Joke} from './Joke/Joke'
 import { jokes } from './jokes';
 import './style.css';
 
 const App = () => {
-
-// const [jokes, setJokes] = useState([]);
-
-// useEffect (() => setJokes(jokes)
-// ,);
-// const handleLike = (likes) =>
 
 
 return (

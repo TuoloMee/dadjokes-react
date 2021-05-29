@@ -7,10 +7,11 @@ export const Joke = ({userAvatar, userName, text, likes, dislikes}) => {
 const [likeUp, setLikeUp] = useState(0)
 const [likeDown, setLikeDown] = useState(0)
 
-const handleLike = () => {
-  setLikeUp({likeUp}+1) 
-}
-  
+useEffect(() => {
+  setLikeUp(likes);
+  setLikeDown(dislikes);
+}, []);
+
 
 return (
 
@@ -27,10 +28,10 @@ return (
           </p>
         </div>
         <div className="joke__likes">
-          <button onClick={handleLike} id="btn-up" className="btn-like btn-like--up"></button>
-          <span id="likes-up" className="likes-count likes-count--up">{likes}</span>
+          <button onClick={() => setLikeUp(likeUp+1)} id="btn-up" className="btn-like btn-like--up"></button>
+          <span id="likes-up" className="likes-count likes-count--up">{likeUp}</span>
           <button onClick={() => setLikeDown(likeDown+1)} id="btn-down" className="btn-like btn-like--down"></button>
-          <span id="likes-down" className="likes-count likes-count--down">{dislikes}</span>
+          <span id="likes-down" className="likes-count likes-count--down">{likeDown}</span>
         </div>
       </div>
     
